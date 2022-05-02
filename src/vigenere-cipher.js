@@ -30,7 +30,7 @@ class VigenereCipheringMachine {
     }
   }
   encrypt(input,code) {
-    if( !input || !code) throw new NotImplementedError('Incorrect arguments!');
+    if( !input || !code) throw new Error('Incorrect arguments!');
     let output = ''
       let codeword = code.repeat(Math.floor(input.length/code.length)) + code.slice(0,input.length % code.length)
       let counter = -1
@@ -44,7 +44,7 @@ class VigenereCipheringMachine {
      return this.type ? output : output.split('').reverse().join('')
   }
   decrypt(input,code) {
-    if( !input || !code) throw new NotImplementedError('Incorrect arguments!');
+    if( !input || !code) throw new Error('Incorrect arguments!');
     let output = ''
       let codeword = code.repeat(Math.floor(input.length/code.length)) + code.slice(0,input.length % code.length)
       let counter = -1
